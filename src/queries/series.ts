@@ -12,6 +12,11 @@ export const GET_SERIES = gql`
           type
           source
         }
+        updated_at
+        created_at
+        view
+        avg_score
+        description
       }
     }
   }

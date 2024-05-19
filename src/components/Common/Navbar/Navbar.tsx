@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav className="z-[800] flex justify-between items-start w-full sticky top-0 bg-bgColor bg-gradient-to-b from-black to-transparent  text-white sm:py-7 py-5 px-32">
+    <nav className="z-[800] flex justify-between items-start w-full sticky top-0 bg-bgColor bg-gradient-to-b from-black to-transparent  text-white sm:py-7 py-5 lg:px-32 px-10">
       <div className="w-1/3 gap-x-8 flex flex-row justify-center items-center">
         <span>Logo</span>
 

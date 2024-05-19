@@ -9,7 +9,7 @@ const BaseLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Navbar />
-      <main className="px-32">{children}</main>
+      <main className="lg:px-32 px-10 font-display">{children}</main>
     </>
   );
 };

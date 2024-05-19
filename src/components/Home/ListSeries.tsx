@@ -1,15 +1,17 @@
-import React from "react";
 import SeriesCard from "../Common/SeriesCard/SeriesCard";
+//Utils
 import { getImage } from "../../utils/handleImages";
+//Types
+import { Series } from "../../types/Series";
 
 export interface ListSeriesProps {
-  listSeries: any[];
+  listSeries: Series[];
 }
 
 const ListSeries = ({ listSeries }: ListSeriesProps) => {
   return (
-    <section className="grid grid-cols-6 gap-4 w-full">
-      {listSeries.map((series: any) => (
+    <section className="grid lg:grid-cols-6 grid-cols-4 gap-4 w-full">
+      {listSeries.map((series: Series) => (
         <SeriesCard
           id={series._id}
           key={series._id}
