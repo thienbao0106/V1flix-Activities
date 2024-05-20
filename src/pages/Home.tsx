@@ -1,9 +1,11 @@
 import { useQuery } from "@apollo/client";
 //Query
 import { GET_SERIES } from "../queries/series";
+//Components
 import ListSeries from "../components/Home/ListSeries";
+import BannerList from "../components/Home/BannerList";
+//Types
 import { Series } from "../types/Series";
-import Banner from "../components/Home/Banner";
 
 interface SeriesFetch {
   series: {
@@ -21,7 +23,7 @@ const Home = () => {
   return (
     <main className="space-y-8">
       <section>
-        <Banner series={data.series.series[0]} />
+        <BannerList listSeries={data.series.series.slice(0, 5)} />
       </section>
       <section className="space-y-2">
         <h1 className="text-2xl font-bold uppercase">Newest Released</h1>

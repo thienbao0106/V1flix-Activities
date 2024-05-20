@@ -7,6 +7,7 @@ export const GET_SERIES = gql`
         _id
         title {
           main_title
+          alt_title
         }
         images {
           type
@@ -17,6 +18,10 @@ export const GET_SERIES = gql`
         view
         avg_score
         description
+        genres {
+          _id
+          name
+        }
       }
     }
   }

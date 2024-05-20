@@ -1,3 +1,4 @@
+import { Genre } from "./Genres";
 import { Images } from "./Images";
 
 export interface Title {
@@ -14,4 +15,5 @@ export interface Series {
   view: number;
   avg_score: number;
   description: string;
+  genres: Genre[];
 }
