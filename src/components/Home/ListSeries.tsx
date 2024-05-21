@@ -3,12 +3,30 @@ import SeriesCard from "../Common/SeriesCard/SeriesCard";
 import { getImage } from "../../utils/handleImages";
 //Types
 import { Series } from "../../types/Series";
+import { useQuery } from "@apollo/client";
+import { GET_SERIES } from "../../queries/series";
+import { ImagesSize } from "../../enums/images";
 
-export interface ListSeriesProps {
-  listSeries: Series[];
+interface SeriesFetch {
+  series: {
+    series: Series[];
+  };
 }
 
-const ListSeries = ({ listSeries }: ListSeriesProps) => {
+interface ListSeriesProps {
+  type: string;
+}
+
+const ListSeries = ({ type }: ListSeriesProps) => {
+  const { loading, error, data } = useQuery<SeriesFetch>(GET_SERIES);
+
+  if (loading) return <p>Loading...</p>;
+  if (error || !data)
+    return <p>Error : {error?.message ?? "Fetch data is error"}</p>;
+  const listSeries = [...data.series.series].sort(
+    (firstSeries: Series | any, secondSeries: Series | any) =>
+      secondSeries[type] - firstSeries[type]
+  );
   return (
     <section className="grid lg:grid-cols-6 grid-cols-4 gap-4 w-full">
       {listSeries.map((series: Series) => (
@@ -16,7 +34,10 @@ const ListSeries = ({ listSeries }: ListSeriesProps) => {
           id={series._id}
           key={series._id}
           title={series.title.main_title}
-          image={getImage("cover", series.images)}
+          image={getImage(ImagesSize.COVER, series.images)}
+          releaseDate={series.season}
+          dataNum={series.view.toString()}
+          dataKind={type}
         />
       ))}
     </section>

@@ -13,6 +13,8 @@ export const GET_SERIES = gql`
           type
           source
         }
+        total_episodes
+        season
         updated_at
         created_at
         view

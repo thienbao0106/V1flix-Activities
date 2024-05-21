@@ -16,4 +16,6 @@ export interface Series {
   avg_score: number;
   description: string;
   genres: Genre[];
+  total_episodes: number;
+  season: string;
 }
