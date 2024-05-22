@@ -18,4 +18,5 @@ export interface Series {
   genres: Genre[];
   total_episodes: number;
   season: string;
+  favors: number;
 }

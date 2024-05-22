@@ -5,6 +5,7 @@ export const GET_SERIES = gql`
     series {
       series {
         _id
+        favors
         title {
           main_title
           alt_title
