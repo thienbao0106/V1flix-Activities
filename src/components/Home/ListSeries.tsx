@@ -28,14 +28,14 @@ const ListSeries = ({ type }: ListSeriesProps) => {
       secondSeries[type] - firstSeries[type]
   );
   return (
-    <section className="grid lg:grid-cols-6 grid-cols-4 gap-4 w-full">
+    <section className="grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3 gap-4 w-full">
       {listSeries.map((series: Series) => (
         <SeriesCard
           id={series._id}
           key={series._id}
           title={series.title.main_title}
           image={getImage(ImagesSize.COVER, series.images)}
-          releaseDate={series.season}
+          releaseDate={series.season.split(" ")[1]}
           dataNum={series.view.toString()}
           dataKind={type}
         />

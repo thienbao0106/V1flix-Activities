@@ -18,7 +18,7 @@ const Home = () => {
         <ListNewEpisodes />
       </section>
       <section className="space-y-2">
-        <h1 className="text-2xl font-bold uppercase">Most Fav</h1>
+        <h1 className="text-2xl font-bold uppercase">Most Favorite</h1>
         <ListFavSeries />
       </section>
       <section className="space-y-2">

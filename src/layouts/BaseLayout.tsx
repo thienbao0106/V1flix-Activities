@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../components/Common/Navbar/Navbar";
+import Header from "../components/Common/Header/Header";
+import Footer from "../components/Common/Footer/Footer";
 
 export interface LayoutProps {
   children?: React.ReactNode;
@@ -8,8 +9,9 @@ export interface LayoutProps {
 const BaseLayout = ({ children }: LayoutProps) => {
   return (
     <>
-      <Navbar />
+      <Header />
       <main className="lg:px-32 px-10 font-display">{children}</main>
+      <Footer />
     </>
   );
 };

@@ -18,7 +18,7 @@ const ListNewEpisodes = () => {
   if (loading) return <p>Loading...</p>;
   if (error || !data) return <p>Error : {error?.message}</p>;
   return (
-    <section className="grid lg:grid-cols-6 grid-cols-4 gap-4 w-full">
+    <section className="grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3 gap-4 w-full">
       {data.episodes.episodes.slice(0, 12).map((episode: Episode) => (
         <SeriesCard
           dataNum={episode.epNum.toString()}

@@ -6,7 +6,7 @@ export interface ListGenresProps {
 
 const ListGenres = ({ genres }: ListGenresProps) => {
   return (
-    <section className="flex flex-row w-full gap-x-2">
+    <section className="flex lg:flex-row flex-wrap w-full gap-x-2 lg:gap-y-0 gap-y-2">
       {genres.map((genre: Genre) => (
         <div className="px-2 py-1 font-bold bg-secondColor rounded-lg">
           {genre.name}

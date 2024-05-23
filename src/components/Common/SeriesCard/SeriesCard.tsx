@@ -40,10 +40,9 @@ const SeriesCard = ({
                   <CiStar />
                 </span>
               )}
-
-              {dataNum}
+              <span className="line-clamp-1">{dataNum}</span>
             </div>
-            <span>{releaseDate}</span>
+            <span className="line-clamp-1">{releaseDate}</span>
           </div>
         )}
       </section>

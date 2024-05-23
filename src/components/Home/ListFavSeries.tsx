@@ -22,15 +22,22 @@ const ListFavSeries = () => {
   const firstData = listSeries[0];
 
   return (
-    <section className="w-full grid grid-cols-5 gap-x-4 h-[17rem]">
-      <FavSeriesCard ranking={1} textSize="xl" height="17" series={firstData} />
-      <div className="col-span-2 flex flex-col  gap-y-4">
+    <section className="w-full lg:grid flex lg:grid-cols-5 flex-col lg:gap-x-4 gap-y-4 h-auto">
+      <section className="lg:col-span-3 ">
+        <FavSeriesCard
+          ranking={1}
+          textSize="xl"
+          height={17}
+          series={firstData}
+        />
+      </section>
+      <div className="lg:col-span-2  grid  lg:grid-cols-none grid-cols-2 lg:grid-rows-2 grid-rows-none  lg:gap-y-4 gap-x-4 ">
         {listSeries.slice(1, 3).map((series: Series, index) => (
           <div className="space-y-2 ">
             <FavSeriesCard
               ranking={index + 2}
               textSize="lg"
-              height="8"
+              height={17}
               series={series}
             />
           </div>
