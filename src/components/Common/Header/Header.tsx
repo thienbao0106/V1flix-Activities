@@ -1,4 +1,8 @@
+import { useAppSelector } from "../../../hook";
+
 const Navbar = () => {
+  const selector = useAppSelector((state) => state.user.value);
+
   return (
     <nav className="z-[800] flex justify-between items-start w-full sticky top-0 bg-bgColor bg-gradient-to-b from-black to-transparent  text-white sm:py-7 py-5 lg:px-32 px-10">
       <div className="w-1/3 gap-x-8 flex flex-row justify-center items-center">
@@ -18,7 +22,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="w-2/3 flex flex-row justify-end items-end">
-        <div className="px-2 py-3">Hello world</div>
+        <div className="px-2 py-3">{selector.id ?? "Hello world"}</div>
       </div>
     </nav>
   );

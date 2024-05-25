@@ -1,6 +1,6 @@
 import { Series } from "../../types/Series";
 import { getImage } from "../../utils/handleImages";
-import ListGenres from "./ListGenres";
+
 import { IoIosStar } from "react-icons/io";
 import { FaEye, FaPlus } from "react-icons/fa";
 import { ImagesSize } from "../../enums/images";

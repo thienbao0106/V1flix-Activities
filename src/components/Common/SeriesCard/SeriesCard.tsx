@@ -27,7 +27,7 @@ const SeriesCard = ({
           alt={`img-${id}`}
         />
         {dataNum && releaseDate && (
-          <div className="absolute bg-detail bottom-0 w-full py-0.5 px-1 rounded-b-sm font-normal text-md flex justify-between items-center">
+          <div className="absolute bg-detail bottom-0 w-full py-0.5 px-1 rounded-b-sm font-normal text-sm flex justify-between items-center">
             <div className="flex flex-row justify-items items-center gap-x-1.5">
               {dataKind === SeriesSortType.EPISODE && <span>Ep: </span>}
               {dataKind === SeriesSortType.VIEW && (
