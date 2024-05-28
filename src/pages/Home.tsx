@@ -6,6 +6,7 @@ import BannerList from "../components/Home/BannerList";
 import ListNewEpisodes from "../components/Home/ListNewEpisodes";
 import { SeriesSortType } from "../enums/series";
 import ListFavSeries from "../components/Home/ListFavSeries";
+import ListRatedSeries from "../components/Home/ListRatedSeries";
 
 const Home = () => {
   return (
@@ -24,6 +25,10 @@ const Home = () => {
       <section className="space-y-2">
         <h1 className="text-2xl font-bold uppercase">Most Watched</h1>
         <ListSeries type={SeriesSortType.VIEW} />
+      </section>
+      <section className="space-y-2">
+        <h1 className="text-2xl font-bold uppercase">Most Rated</h1>
+        <ListRatedSeries />
       </section>
     </main>
   );

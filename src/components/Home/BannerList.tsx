@@ -36,7 +36,7 @@ const BannerList = () => {
         slidesPerView={1}
       >
         {listSeries.map((series: Series) => (
-          <SwiperSlide>
+          <SwiperSlide key={series._id}>
             <Banner series={series} key={series._id} />
           </SwiperSlide>
         ))}

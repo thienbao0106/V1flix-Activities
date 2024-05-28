@@ -16,7 +16,7 @@ const Banner = ({ series }: BannerProps) => {
   const size = useWindowSize();
   return (
     <section
-      className=" h-[380px]   bg-cover bg-center bg-no-repeat "
+      className=" h-[340px]   bg-cover bg-center bg-no-repeat "
       style={{
         backgroundImage: `linear-gradient(rgba(65, 63, 63, 0.6), rgba(65, 40, 63, 0.6)), url(${bannerImg})`,
       }}

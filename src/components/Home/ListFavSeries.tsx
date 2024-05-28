@@ -33,7 +33,7 @@ const ListFavSeries = () => {
       </section>
       <div className="lg:col-span-2  grid  lg:grid-cols-none grid-cols-2 lg:grid-rows-2 grid-rows-none  lg:gap-y-4 gap-x-4 ">
         {listSeries.slice(1, 3).map((series: Series, index) => (
-          <div className="space-y-2 ">
+          <div key={series._id} className="space-y-2 ">
             <FavSeriesCard
               ranking={index + 2}
               textSize="lg"

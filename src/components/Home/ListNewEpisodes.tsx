@@ -21,6 +21,7 @@ const ListNewEpisodes = () => {
     <section className="grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3 gap-4 w-full">
       {data.episodes.episodes.slice(0, 12).map((episode: Episode) => (
         <SeriesCard
+          key={episode.series._id}
           dataNum={episode.epNum.toString()}
           id={episode.series._id}
           image={getImage(ImagesSize.COVER, episode.series.images)}
