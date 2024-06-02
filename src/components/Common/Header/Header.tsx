@@ -4,6 +4,7 @@ import Avatar from "./Avatar";
 
 const Navbar = () => {
   const selector = useAppSelector((state) => state.user.value);
+  const currentUser = selector[0];
   const [hover, setHover] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -43,12 +44,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" w-2/3  flex flex-row justify-end items-end">
-        {selector.id !== "" && (
+        {currentUser.id !== "" && (
           <Avatar
             divRef={divRef}
             hover={hover}
             setHover={setHover}
-            user={selector}
+            user={currentUser}
           />
         )}
       </div>

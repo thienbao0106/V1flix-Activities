@@ -3,12 +3,24 @@ import { User } from "../types/User";
 import type { RootState } from "../store";
 
 interface UserState {
-  value: User;
+  value: User[];
+  currentUser: User;
 }
 
 const initialState: UserState = {
-  value: {
+  value: [
+    {
+      id: "",
+      username: "",
+      avatar: "",
+      nickname: "",
+    },
+  ],
+  currentUser: {
     id: "",
+    username: "",
+    avatar: "",
+    nickname: "",
   },
 };
 
@@ -16,12 +28,15 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<User>) => {
-      state.value = action.payload;
+    setListUsers: (state, action: PayloadAction<User[]>) => {
+      state.value = [...action.payload];
     },
+    // setCurrentUser: (state, action: PayloadAction<User>) => {
+    //   state.currentUser = action.payload;
+    // },
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setListUsers } = userSlice.actions;
 export const selectUser = (state: RootState) => state.user.value;
 export default userSlice.reducer;
