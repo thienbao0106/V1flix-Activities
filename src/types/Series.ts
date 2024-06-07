@@ -1,3 +1,4 @@
+import { Episode } from "./Episodes";
 import { Genre } from "./Genres";
 import { Images } from "./Images";
 
@@ -19,4 +20,6 @@ export interface Series {
   total_episodes: number;
   season: string;
   favors: number;
+  type: string;
+  episodes: Episode[];
 }

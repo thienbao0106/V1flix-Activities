@@ -29,3 +29,40 @@ export const GET_SERIES = gql`
     }
   }
 `;
+
+export const GET_SERIES_BY_TITLE = gql`
+  query FindSeries($seriesTitle: String!) {
+    findSeriesByName(seriesTitle: $seriesTitle) {
+      _id
+      type
+      favors
+      title {
+        main_title
+        alt_title
+      }
+      images {
+        type
+        source
+      }
+      total_episodes
+      episodes {
+        title
+        description
+        _id
+        epNum
+        created_at
+        thumbnail
+      }
+      season
+      updated_at
+      created_at
+      view
+      avg_score
+      description
+      genres {
+        _id
+        name
+      }
+    }
+  }
+`;

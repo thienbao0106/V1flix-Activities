@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useAppSelector } from "../../../hook";
 import Avatar from "./Avatar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const selector = useAppSelector((state) => state.user.value);
@@ -28,7 +29,9 @@ const Navbar = () => {
   return (
     <nav className="z-[100] flex justify-between items-start w-full sticky top-0 bg-bgColor bg-gradient-to-b from-black to-transparent  text-white sm:py-7 py-5 lg:px-32 px-10">
       <div className="w-1/3 gap-x-8 flex flex-row justify-center items-center">
-        <span>Logo</span>
+        <Link to="/">
+          <span>Logo</span>
+        </Link>
 
         <div className="w-full flex justify-center items-center bg-gray-500 bg-opacity-40 px-2 py-3 rounded-md no-underline text-white gap-3">
           <svg className="search-icon" viewBox="0 0 20 20">

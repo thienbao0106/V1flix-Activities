@@ -11,3 +11,11 @@ export const getImage = (type: string, images: Images[]): string => {
   const discordImg = import.meta.env.VITE_DISCORD_IMAGE_URL;
   return `${discordImg}/${result.source.split("/upload")[1]}`;
 };
+
+export const getEpisodeThumbnail = (seriesTitle: string, originUrl: string) => {
+  const title = seriesTitle.toLowerCase().replace(/ /g, "_");
+  const discordImg = import.meta.env.VITE_DISCORD_IMAGE_URL;
+  const splitedString = originUrl.split("/");
+  const fileName: string = splitedString[splitedString.length - 1];
+  return `${discordImg}/v1/anime-v2/episodes/${title}/${fileName}`;
+};

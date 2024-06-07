@@ -5,4 +5,6 @@ export interface Episode {
   series: Series;
   epNum: number;
   created_at: number;
+  thumbnail: string;
+  title: string;
 }

@@ -34,9 +34,7 @@ const Banner = ({ series }: BannerProps) => {
           <div className="space-y-2">
             <h1 className="text-2xl line-clamp-2">{series.title.main_title}</h1>
             <h2 className="text-lg font-normal">{series.title.alt_title}</h2>
-            {/* <section>
-              <ListGenres genres={series.genres} />
-            </section> */}
+
             <section className="flex flex-row gap-x-2">
               <div className="bg-detail px-2 py-1 rounded-lg flex flex-row justify-center items-center gap-x-2">
                 <IoIosStar color="#e89b26" />

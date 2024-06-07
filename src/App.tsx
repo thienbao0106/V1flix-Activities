@@ -1,21 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import BaseLayout from "./layouts/BaseLayout";
-import Home from "./pages/Home";
 import { useAppDispatch } from "./hook";
 import { setListUsers } from "./slices/userSlice";
 import { DiscordSDK } from "@discord/embedded-app-sdk";
 import { setupDiscordSdk } from "./utils/setupDiscordSDK";
 import { User } from "./types/User";
 import { useEffect } from "react";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
+//Pages
+import Home from "./pages/Home";
+import SeriesDetail from "./pages/SeriesDetail";
 
 const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
 function App() {
@@ -53,7 +48,10 @@ function App() {
   return (
     <section className="font-bold text-white">
       <BaseLayout>
-        <RouterProvider router={router} />
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<SeriesDetail />} path="/series/:title" />
+        </Routes>
       </BaseLayout>
     </section>
   );
