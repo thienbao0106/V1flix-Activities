@@ -7,4 +7,6 @@ export interface Episode {
   created_at: number;
   thumbnail: string;
   title: string;
+  view: number;
+  description: string;
 }

@@ -10,7 +10,7 @@ const ListGenres = ({ genres }: ListGenresProps) => {
       {genres.map((genre: Genre) => (
         <div
           key={genre._id}
-          className="px-2 py-1 font-bold bg-secondColor rounded-lg"
+          className="px-2 py-1 font-bold bg-detail rounded-lg"
         >
           {genre.name}
         </div>

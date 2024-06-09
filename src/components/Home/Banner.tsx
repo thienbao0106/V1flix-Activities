@@ -5,6 +5,7 @@ import { IoIosStar } from "react-icons/io";
 import { FaEye, FaPlus } from "react-icons/fa";
 import { ImagesSize } from "../../enums/images";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { Link } from "react-router-dom";
 
 export interface BannerProps {
   series: Series;
@@ -23,11 +24,16 @@ const Banner = ({ series }: BannerProps) => {
     >
       <div className="lg:px-32 px-10 py-10 w-full flex flex-row gap-x-4">
         {size.width > 1024 && (
-          <img
-            className="xl:w-1/6 lg:w-1/4 rounded shadow-sm"
-            src={coverImg}
-            alt={`cover-${series._id}`}
-          />
+          <Link
+            className="xl:w-1/6 lg:w-1/4"
+            to={`/series/${series.title.main_title}`}
+          >
+            <img
+              className=" rounded shadow-sm hover:opacity-80 hover:cursor-pointer"
+              src={coverImg}
+              alt={`cover-${series._id}`}
+            />
+          </Link>
         )}
 
         <section className="xl:w-5/6 lg:w-3/4 w-full space-y-2 flex flex-col justify-between">

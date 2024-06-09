@@ -52,6 +52,7 @@ export const GET_SERIES_BY_TITLE = gql`
         epNum
         created_at
         thumbnail
+        view
       }
       season
       updated_at
@@ -62,6 +63,18 @@ export const GET_SERIES_BY_TITLE = gql`
       genres {
         _id
         name
+      }
+    }
+  }
+`;
+
+export const FIND_SERIES_BY_TITLE = gql`
+  query FindSeries($keyword: String!) {
+    findSeries(title: $keyword, numOfLimit: 0) {
+      _id
+      type
+      title {
+        main_title
       }
     }
   }

@@ -42,6 +42,7 @@ const SeriesDetail = () => {
             view={data.findSeriesByName.view}
             score={data.findSeriesByName.avg_score}
             genres={data.findSeriesByName.genres}
+            favors={data.findSeriesByName.favors}
           />
           <section className="mt-10">
             <div className="flex flex-row gap-x-3 text-center text-xl  ">

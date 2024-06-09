@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ImagesSize } from "../../enums/images";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Series } from "../../types/Series";
@@ -21,15 +22,17 @@ const FavSeriesCard = ({
   const size = useWindowSize();
   return (
     <div className="space-y-2 group relative">
-      <div
-        className={`group-hover:cursor-pointer group-hover:opacity-20 lg:h-full bg-cover bg-center bg-no-repeat rounded-md `}
-        style={{
-          backgroundImage: `url(${banner})`,
-          height: `${
-            size.width > 1024 && ranking === 1 ? height : height / 2 - 0.5
-          }rem`,
-        }}
-      ></div>
+      <Link to={`/series/${series.title.main_title}`}>
+        <div
+          className={`group-hover:cursor-pointer group-hover:opacity-20 lg:h-full bg-cover bg-center bg-no-repeat rounded-md `}
+          style={{
+            backgroundImage: `url(${banner})`,
+            height: `${
+              size.width > 1024 && ranking === 1 ? height : height / 2 - 0.5
+            }rem`,
+          }}
+        ></div>
+      </Link>
       <div className="absolute invisible group-hover:visible bottom-0 px-2 pb-2">
         <h1 className={`text-${textSize} font-bold line-clamp-1"`}>
           {series.title.main_title}

@@ -3,6 +3,7 @@ import { ImagesSize } from "../../enums/images";
 import { Series } from "../../types/Series";
 import { getImage } from "../../utils/handleImages";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { Link } from "react-router-dom";
 
 interface RatedCardProps {
   series: Series;
@@ -20,14 +21,16 @@ const RatedCard = ({ series, colSpan, ranking }: RatedCardProps) => {
       className="group relative"
       style={{ gridColumn: `span ${actualColSpan} / span ${actualColSpan}` }}
     >
-      <div
-        className={`group-hover:cursor-pointer group-hover:opacity-20 lg:h-full bg-cover bg-center bg-no-repeat rounded-md w-full`}
-        style={{
-          height: "200px",
+      <Link to={`/series/${series.title.main_title}`}>
+        <div
+          className={`group-hover:cursor-pointer group-hover:opacity-20 lg:h-full bg-cover bg-center bg-no-repeat rounded-md w-full`}
+          style={{
+            height: "200px",
 
-          backgroundImage: `url(${banner})`,
-        }}
-      ></div>
+            backgroundImage: `url(${banner})`,
+          }}
+        ></div>
+      </Link>
       <div className="absolute invisible group-hover:visible bottom-0 px-2 pb-2">
         <h1 className="text-lg font-bold  line-clamp-1">
           {series.title.main_title}

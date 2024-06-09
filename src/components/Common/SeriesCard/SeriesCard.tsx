@@ -22,7 +22,7 @@ const SeriesCard = ({
   return (
     <div className="space-y-2 group" key={id}>
       <section className="relative">
-        <Link to={`/series/${title}`}>
+        <Link to={dataKind === "episode" ? "/" : `/series/${title}`}>
           <img
             className=" group-hover:cursor-pointer group-hover:opacity-50 w-full"
             src={image}
