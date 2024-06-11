@@ -55,6 +55,7 @@ export const GET_SERIES_BY_TITLE = gql`
         view
       }
       season
+      duration
       updated_at
       created_at
       view
@@ -75,6 +76,14 @@ export const FIND_SERIES_BY_TITLE = gql`
       type
       title {
         main_title
+      }
+      season
+      total_episodes
+      view
+      avg_score
+      images {
+        type
+        source
       }
     }
   }

@@ -29,14 +29,14 @@ const Navbar = () => {
 
   return (
     <nav className="z-[100] flex justify-between items-start w-full sticky top-0 bg-bgColor bg-gradient-to-b from-black to-transparent  text-white sm:py-7 py-5 lg:px-32 px-10">
-      <div className="w-1/3 gap-x-8 flex flex-row justify-center items-center">
+      <div className="lg:w-2/4 w-2/3 gap-x-8 flex flex-row justify-start items-center">
         <Link to="/">
           <span>Logo</span>
         </Link>
 
         <SearchBar />
       </div>
-      <div className=" w-2/3  flex flex-row justify-end items-end">
+      <div className="lg:w-2/4 w-1/3  flex flex-row justify-end items-end">
         {currentUser.id !== "" && (
           <Avatar
             divRef={divRef}

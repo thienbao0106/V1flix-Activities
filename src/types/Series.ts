@@ -22,4 +22,5 @@ export interface Series {
   favors: number;
   type: string;
   episodes: Episode[];
+  duration: number;
 }
