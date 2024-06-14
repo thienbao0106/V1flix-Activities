@@ -11,6 +11,7 @@ import { useEffect } from "react";
 //Pages
 import Home from "./pages/Home";
 import SeriesDetail from "./pages/SeriesDetail";
+import Video from "./pages/Video";
 
 const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<SeriesDetail />} path="/series/:title" />
+          <Route element={<Video />} path="/episode/:id" />
         </Routes>
       </BaseLayout>
     </section>

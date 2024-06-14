@@ -2,6 +2,7 @@ import moment from "moment";
 import { Episode } from "../../types/Episodes";
 import { getEpisodeThumbnail } from "../../utils/handleImages";
 import { FaCalendar, FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface EpisodeDetailsCard {
   episode: Episode;
@@ -12,11 +13,13 @@ const EpisodeDetailsCard = ({ episode, title }: EpisodeDetailsCard) => {
   return (
     <div className="flex flex-row gap-x-3 ">
       <div className="w-2/6">
-        <img
-          src={getEpisodeThumbnail(title, episode.thumbnail)}
-          alt={`ep-${episode._id}`}
-          className="w-full hover:cursor-pointer hover:opacity-60 rounded-lg max-h-[180px]"
-        />
+        <Link to={`/episode/${episode._id}`}>
+          <img
+            src={getEpisodeThumbnail(title, episode.thumbnail)}
+            alt={`ep-${episode._id}`}
+            className="w-full hover:cursor-pointer hover:opacity-60 rounded-lg max-h-[180px]"
+          />
+        </Link>
       </div>
       <div className="w-4/6 space-y-1">
         <h1 className="text-xl line-clamp-2">

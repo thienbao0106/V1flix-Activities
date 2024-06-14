@@ -20,3 +20,27 @@ export const GET_JUST_RELEASED = gql`
     }
   }
 `;
+
+export const FIND_EPISODE = gql`
+  query FindEpisode($episodeId: String!) {
+    findEpisode(episodeId: $episodeId) {
+      _id
+      title
+      epNum
+      source {
+        _id
+        kind
+        value
+      }
+      subtitles {
+        lang
+        source {
+          _id
+          kind
+          value
+        }
+        label
+      }
+    }
+  }
+`;

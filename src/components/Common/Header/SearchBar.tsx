@@ -35,7 +35,7 @@ const SearchBar = () => {
       {keyword !== "" && (
         <div className="absolute lg:overflow-y-hidden overflow-y-scroll lg:h-[400px] h-[250px] w-full  rounded-b-md ">
           {loading ? (
-            <div className="p-4 bg-red-700 hover:bg-red-500">Loading</div>
+            <div className="p-4 bg-gray-500 hover:bg-gray-700">Loading</div>
           ) : (
             <ResultCard
               setKeyword={setKeyword}
